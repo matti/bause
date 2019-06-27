@@ -1,6 +1,13 @@
 version: '2.1'
 
 services:
-  app:
-    build: .
-    image: mattipaksula/bause
+  user:
+    build:
+      context: .
+      dockerfile: Dockerfile.user
+    image: mattipaksula/bause:user
+  root:
+    build:
+      context: .
+      dockerfile: Dockerfile.root
+    image: mattipaksula/bause:root

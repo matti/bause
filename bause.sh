@@ -7,6 +7,6 @@ _term() {
 }
 trap _term TERM
 
-echo "baused"
+echo "baused as $(whoami)"
 tail -f /dev/null &
 wait $!
