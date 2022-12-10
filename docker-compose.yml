@@ -5,33 +5,32 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.user
-    x-bake:
-      tags:
-        - ghcr.io/${GITHUB_REPOSITORY}:user
-        - ghcr.io/${GITHUB_REPOSITORY}:${GITHUB_SHA}
-      platforms:
-        - linux/amd64
-        - linux/arm64
+      x-bake:
+        tags:
+          - ghcr.io/${GITHUB_REPOSITORY}:user
+          - ghcr.io/${GITHUB_REPOSITORY}:${GITHUB_SHA}
+        platforms:
+          - linux/amd64
+          - linux/arm64
   root:
     build:
       context: .
       dockerfile: Dockerfile.root
-    x-bake:
-      tags:
-        - ghcr.io/${GITHUB_REPOSITORY}:root
-        - ghcr.io/${GITHUB_REPOSITORY}:${GITHUB_SHA}
-        - ghcr.io/${GITHUB_REPOSITORY}:latest
-      platforms:
-        - linux/amd64
-        - linux/arm64
+      x-bake:
+        tags:
+          - ghcr.io/${GITHUB_REPOSITORY}:root
+          - ghcr.io/${GITHUB_REPOSITORY}:${GITHUB_SHA}
+        platforms:
+          - linux/amd64
+          - linux/arm64
   hang:
     build:
       context: .
       dockerfile: Dockerfile.hang
-    x-bake:
-      tags:
-        - ghcr.io/${GITHUB_REPOSITORY}:hang
-        - ghcr.io/${GITHUB_REPOSITORY}:${GITHUB_SHA}
-      platforms:
-        - linux/amd64
-        - linux/arm64
+      x-bake:
+        tags:
+          - ghcr.io/${GITHUB_REPOSITORY}:hang
+          - ghcr.io/${GITHUB_REPOSITORY}:${GITHUB_SHA}
+        platforms:
+          - linux/amd64
+          - linux/arm64
